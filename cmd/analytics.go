@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -12,6 +13,7 @@ import (
 const (
 	layout = "02/Jan/2006:15:04:05"
 )
+var lineCount, printCount int
 
 func checkEr(e error)  {
 	if e != nil{
@@ -26,21 +28,33 @@ func openFile(dir string, filename string) (*os.File){
 	return file
 }
 
-func readFile(f *os.File, time int64) {
+func printLine(f *os.File, time int64) {
+
 	scanner := bufio.NewScanner(f)
 	defer f.Close()
+
 	for scanner.Scan(){
 		line := strings.Fields(scanner.Text())
 
 		if checkTime(parseDate(parseLine(line)), time){
-			fmt.Println(line[3] +" "+ line[4] + " " + line[5]+ " " + line[6]+ " " + line[7]+ " " + line[8]+ " " + line[9])
+			fmt.Println(line[1] +" "+ line[2] + " " + line[3] + line[4] + " " + line[5]+ " " + line[6]+ " " + line[7]+ " " + line[8]+ " " + line[9])
+			printCount++
 		}
+		lineCount++
 	}
+}
+
+func checkNewFile() bool{
+	fmt.Println(lineCount, printCount)
+	if lineCount == printCount{
+		lineCount, printCount = 0,0
+		return true
+	}
+	return false
 }
 
 func parseLine(s []string) string{
 	val := strings.Replace(s[3], "[", "", -1)
-	//fmt.Println(val)
 	return val
 }
 
@@ -62,10 +76,18 @@ func checkTime(logTime time.Time, mins int64) bool{
 
 
 func analytics(cmd * cobra.Command, args []string){
-	//dir, _ := cmd.Flags().GetString("directory")
-	//fmt.Println(dir)
-	f := openFile(".", "access.log.1")
-	readFile(f, 100)
+	dir, _ := cmd.Flags().GetString("directory")
+	fmt.Println(dir)
+	number := 1
+
+	for {
+		f :=openFile(".", "access.log." + strconv.Itoa(number))
+		printLine(f, 100)
+		number++
+		if !checkNewFile(){
+			break
+		}
+	}
 
 
 
