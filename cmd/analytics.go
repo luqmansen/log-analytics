@@ -4,9 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/spf13/cobra"
-	"log"
 	"os"
-	"path/filepath"
 	"strings"
 	"time"
 )
@@ -28,26 +26,38 @@ func openFile(dir string, filename string) (*os.File){
 	return file
 }
 
-func readFile(f *os.File) *bufio.Scanner{
+func readFile(f *os.File, time int64) {
 	scanner := bufio.NewScanner(f)
 	defer f.Close()
 	for scanner.Scan(){
 		line := strings.Fields(scanner.Text())
-		parseLine(line)
+
+		if checkTime(parseDate(parseLine(line)), time){
+			fmt.Println(line[3] +" "+ line[4] + " " + line[5]+ " " + line[6]+ " " + line[7]+ " " + line[8]+ " " + line[9])
+		}
 	}
-	return scanner
 }
 
-func parseLine(s []string) bool{
+func parseLine(s []string) string{
 	val := strings.Replace(s[3], "[", "", -1)
 	//fmt.Println(val)
-	t, err := time.Parse(layout, val)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(t.Unix())
+	return val
+}
 
-	return true
+func parseDate(s string) time.Time{
+	t, err := time.Parse(layout, s)
+	checkEr(err)
+	//fmt.Println(t.Unix())
+	return t
+}
+
+func checkTime(logTime time.Time, mins int64) bool{
+
+	if logTime.Unix()  > time.Now().Unix() -  (mins * 3600) {
+		return true
+	}
+
+	return false
 }
 
 
@@ -55,18 +65,8 @@ func analytics(cmd * cobra.Command, args []string){
 	//dir, _ := cmd.Flags().GetString("directory")
 	//fmt.Println(dir)
 	f := openFile(".", "access.log.1")
-	readFile(f)
+	readFile(f, 100)
 
 
 
-}
-
-func visit(files *[]string) filepath.WalkFunc{
-	return func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			log.Fatal(err)
-		}
-		*files = append(*files, path)
-		return nil
-	}
 }
