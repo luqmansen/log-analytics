@@ -17,16 +17,15 @@ const (
 var lineCount, printCount int
 
 func checkEr(e error) {
-	if os.IsNotExist(e){
-		os.Exit(1)
+	if e != nil{
+		panic(e)
 	}
 }
 
-func openFile(dir string, filename string) *os.File {
+func openFile(dir string, filename string) (*os.File, error) {
 	file, err := os.Open(dir + "/" + filename)
-	fmt.Println(dir + "/" + filename)
-	checkEr(err)
-	return file
+	//fmt.Println(dir + "/" + filename)
+	return file, err
 }
 
 func printLine(f *os.File, time time.Duration) {
@@ -48,7 +47,7 @@ func printLine(f *os.File, time time.Duration) {
 }
 
 func openNewFile() bool {
-	fmt.Println(lineCount, printCount)
+	//fmt.Println(lineCount, printCount)
 	if lineCount == printCount {
 		lineCount, printCount = 0, 0
 		return true
@@ -57,7 +56,10 @@ func openNewFile() bool {
 }
 
 func parseLine(s []string) string {
-	val := strings.Replace(s[3], "[", "", -1)
+	var val string
+	if len(s) > 3{
+		val = strings.Replace(s[3], "[", "", -1)
+	}
 	return val
 }
 
@@ -88,21 +90,24 @@ func analytics(cmd *cobra.Command, args []string) {
 
 	dir, _ := cmd.Flags().GetString("directory")
 	mins, err := cmd.Flags().GetInt("time")
-	fmt.Println(err)
-	fmt.Println("directory : " + dir)
-	fmt.Printf("time : %v \n ",time.Duration(mins)*time.Minute)
+	//fmt.Println(err)
+	//fmt.Println("directory : " + dir)
+	//fmt.Printf("time : %v \n ",time.Duration(mins)*time.Minute)
 
-	log := time.Now().Add(time.Duration(-mins) * time.Minute)
+	//log := time.Now().Add(time.Duration(-mins) * time.Minute)
 
-	fmt.Printf("log %v",  log)
+	//fmt.Printf("log %v",  log)
 
 	if err != nil {
 		fmt.Println(err)
 	}
 	number := 1
 	for {
-		f := openFile(dir, "access.log."+strconv.Itoa(number))
-		printLine(f, time.Duration(30000))
+		f, err := openFile(dir, "access.log."+strconv.Itoa(number))
+		if os.IsNotExist(err){
+			break
+		}
+		printLine(f, time.Duration(mins))
 		number++
 		if !openNewFile() {
 			break
