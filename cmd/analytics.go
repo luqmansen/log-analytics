@@ -22,11 +22,12 @@ func printLine(f *os.File, time time.Duration) {
 	defer f.Close()
 
 	for scanner.Scan() {
-		func(){
+		//func() {
 			line := strings.Fields(scanner.Text())
 			date, err := parseDate(parseLine(line))
 			if err != nil {
-				fmt.Printf("Error when parsing date : %v", err)
+				//fmt.Printf("Error when parsing date : %v", err)
+				panic(err)
 			}
 			if checkTime(date, time) {
 				if len(line) > 20 {
@@ -35,7 +36,7 @@ func printLine(f *os.File, time time.Duration) {
 				printCount++
 			}
 			lineCount++
-		}()
+		//}()
 
 	}
 }
@@ -54,7 +55,6 @@ func parseLine(s []string) string {
 	} else {
 		return ""
 	}
-
 }
 
 func parseDate(s string) (time.Time, error) {
@@ -71,15 +71,19 @@ func checkTime(logTime time.Time, mins time.Duration) bool {
 
 func analytics(cmd *cobra.Command, args []string) {
 	//TODO add file name pattern as flag
+
 	dir, _ := cmd.Flags().GetString("directory")
+	name, _ := cmd.Flags().GetString("file-name-pattern")
 	mins, err := cmd.Flags().GetInt("time")
+
 
 	if err != nil {
 		fmt.Println(err)
 	}
 	number := 1
+	fmt.Println(dir + "/" + name + strconv.Itoa(number))
 	for {
-		f, err := os.Open(dir + "/" + "access.log." + strconv.Itoa(number))
+		f, err := os.Open(dir + "/" + name + strconv.Itoa(number))
 		if os.IsNotExist(err) {
 			break
 		}

@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/access.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/access.log.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
