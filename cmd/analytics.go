@@ -3,6 +3,7 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
 	"os"
 	"strconv"
@@ -30,7 +31,14 @@ func printLine(f *os.File, time time.Duration) {
 			}
 			if checkTime(date, time) {
 				if len(line) > 20 {
-					fmt.Println(line[1] + " " + line[2] + " " + line[3] + line[4] + " " + line[5] + " " + line[6] + " " + line[7] + " " + line[8] + " " + line[9])
+					fmt.Println(line[1] + " " +
+						line[2] +
+						" " + aurora.BrightYellow(line[3]+ line[4]).String()  +
+						" " + aurora.Green(line[5]).String() +
+						" " + aurora.BrightBlue(line[6]).String() +
+						" " + aurora.BgBrightBlue(line[7]).String() +
+						" " + aurora.BrightMagenta(line[8]).String() +
+						" " + aurora.BrightRed(line[9]).String())
 				}
 				printCount++
 			}
