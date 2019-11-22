@@ -50,3 +50,22 @@ func TestParseDate(t *testing.T){
 		t.Errorf("parseDate(\"random string\") failed, expected %v, got %v", nil, err)
 	}
 }
+
+func TestCheckTime(t *testing.T){
+
+	time1 := time.Date(2006, 1, 2, 10, 00, 00, 0, time.UTC)
+	mins := 60
+
+	b := checkTime(time1, time.Duration(mins))
+	if b != false{
+		t.Errorf("checkTime(%v') failed, expected %v, got %v", time1,false,true )
+	}
+
+	time1 = time.Now().Add(-10*time.Minute)
+	b = checkTime(time1, time.Duration(mins))
+	if b != true{
+		t.Errorf("checkTime('%v') failed, expected %v, got %v", time1,true,false )
+	}
+
+
+}
