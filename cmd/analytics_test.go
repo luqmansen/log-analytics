@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"testing"
+	"time"
 )
 
 func TestIsOpenNewFile(t *testing.T) {
@@ -31,5 +32,21 @@ func TestParseLine(t *testing.T){
 	str = parseLine(s)
 	if str != ""{
 		t.Errorf("parseLine([]string{\"a\", \"b\", \"c\"}) failed, expected %v, got %v", nil, str)
+	}
+}
+
+func TestParseDate(t *testing.T){
+	s := "02/Jan/2006:15:04:05"
+	time2 := time.Date(2006, 1, 2, 15, 04, 05, 0, time.UTC)
+	time1, err := parseDate(s)
+	if time1 != time2{
+		t.Errorf("parseDate(02/Jan/2006:15:04:05) failed, expected %v, got %v", time2, time1)
+	}
+	if err != nil{
+		t.Errorf("parseDate(02/Jan/2006:15:04:05) failed, expected %v, got %v", nil, err)
+	}
+	_, err = parseDate("random string")
+	if err == nil{
+		t.Errorf("parseDate(\"random string\") failed, expected %v, got %v", nil, err)
 	}
 }

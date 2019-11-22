@@ -29,8 +29,11 @@ func printLine(f *os.File, time time.Duration) {
 
 	for scanner.Scan() {
 		line := strings.Fields(scanner.Text())
-
-		if checkTime(parseDate(parseLine(line)), time) {
+		date, err := parseDate(parseLine(line))
+		if err != nil {
+			fmt.Printf("Error when parsing date : %v", err)
+		}
+		if checkTime(date, time) {
 			if len(line) > 20 {
 				fmt.Println(line[1] + " " + line[2] + " " + line[3] + line[4] + " " + line[5] + " " + line[6] + " " + line[7] + " " + line[8] + " " + line[9])
 			}
@@ -57,10 +60,8 @@ func parseLine(s []string) string {
 	return val
 }
 
-func parseDate(s string) time.Time {
-	t, err := time.Parse(layout, s)
-	checkEr(err)
-	return t
+func parseDate(s string) (time.Time, error){
+	return time.Parse(layout, s)
 }
 
 func checkTime(logTime time.Time, mins time.Duration) bool {
