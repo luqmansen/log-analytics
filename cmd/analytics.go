@@ -22,18 +22,21 @@ func printLine(f *os.File, time time.Duration) {
 	defer f.Close()
 
 	for scanner.Scan() {
-		line := strings.Fields(scanner.Text())
-		date, err := parseDate(parseLine(line))
-		if err != nil {
-			fmt.Printf("Error when parsing date : %v", err)
-		}
-		if checkTime(date, time) {
-			if len(line) > 20 {
-				fmt.Println(line[1] + " " + line[2] + " " + line[3] + line[4] + " " + line[5] + " " + line[6] + " " + line[7] + " " + line[8] + " " + line[9])
+		func(){
+			line := strings.Fields(scanner.Text())
+			date, err := parseDate(parseLine(line))
+			if err != nil {
+				fmt.Printf("Error when parsing date : %v", err)
 			}
-			printCount++
-		}
-		lineCount++
+			if checkTime(date, time) {
+				if len(line) > 20 {
+					fmt.Println(line[1] + " " + line[2] + " " + line[3] + line[4] + " " + line[5] + " " + line[6] + " " + line[7] + " " + line[8] + " " + line[9])
+				}
+				printCount++
+			}
+			lineCount++
+		}()
+
 	}
 }
 
@@ -46,11 +49,12 @@ func isOpenNewFile() bool {
 }
 
 func parseLine(s []string) string {
-	var val string
 	if len(s) > 3 {
-		val = strings.Replace(s[3], "[", "", -1)
+		return strings.Replace(s[3], "[", "", -1)
+	} else {
+		return ""
 	}
-	return val
+
 }
 
 func parseDate(s string) (time.Time, error) {
@@ -66,7 +70,7 @@ func checkTime(logTime time.Time, mins time.Duration) bool {
 }
 
 func analytics(cmd *cobra.Command, args []string) {
-
+	//TODO add file name pattern as flag
 	dir, _ := cmd.Flags().GetString("directory")
 	mins, err := cmd.Flags().GetInt("time")
 

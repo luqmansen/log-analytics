@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"os"
 	"testing"
 	"time"
 )
@@ -67,4 +68,17 @@ func TestCheckTime(t *testing.T) {
 		t.Errorf("checkTime('%v') failed, expected %v, got %v", time1, true, false)
 	}
 
+}
+
+func TestPrintLine(t *testing.T){
+	f, _ := os.Open("../log_test")
+	times := 0*time.Second
+	lineCount, printCount = 0,0
+	printLine(f, times)
+	if lineCount != 5{
+		t.Errorf("testPrintLine('%v', %v) failed, expected %v, got %v",f, times , 5, lineCount)
+	}
+	if printCount != 0{
+		t.Errorf("testPrintLine('%v', %v) failed, expected %v, got %v",f, times , 0, printCount)
+	}
 }
