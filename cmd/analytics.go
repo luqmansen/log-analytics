@@ -16,12 +16,6 @@ const (
 
 var lineCount, printCount int
 
-func checkEr(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 func printLine(f *os.File, time time.Duration) {
 
 	scanner := bufio.NewScanner(f)
@@ -59,7 +53,7 @@ func parseLine(s []string) string {
 	return val
 }
 
-func parseDate(s string) (time.Time, error){
+func parseDate(s string) (time.Time, error) {
 	return time.Parse(layout, s)
 }
 
@@ -83,7 +77,6 @@ func analytics(cmd *cobra.Command, args []string) {
 	for {
 		f, err := os.Open(dir + "/" + "access.log." + strconv.Itoa(number))
 		if os.IsNotExist(err) {
-			//fmt.Println(err)
 			break
 		}
 		printLine(f, time.Duration(mins))
