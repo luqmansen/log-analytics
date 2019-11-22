@@ -77,7 +77,6 @@ func analytics(cmd *cobra.Command, args []string) {
 		fmt.Println(err)
 	}
 	number := 1
-	fmt.Println(dir + "/" + name + strconv.Itoa(number))
 	for {
 		f, err := os.Open(dir + "/" + name + strconv.Itoa(number))
 		if os.IsNotExist(err) {
