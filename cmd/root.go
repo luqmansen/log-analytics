@@ -31,10 +31,10 @@ var directory, fileName string
 var rootCmd = &cobra.Command{
 	Use:   "analytics",
 	Short: "cli-tool for display log file analytics",
-	Long:  `cli-tool for display log file analytics, specifically to read log file that
+	Long: `cli-tool for display log file analytics, specifically to read log file that
 follow Common Log Format (https://en.wikipedia.org/wiki/Common_Log_Format).
 Example provided is the default log file for access log on apache server`,
-	Run:   analytics,
+	Run: analytics,
 }
 
 func Execute() {
@@ -47,7 +47,6 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.analytics.yaml)")
-	//rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	rootCmd.Flags().StringVarP(&directory, "directory", "d", ".", "Directory where the log file lies")
 	rootCmd.Flags().StringVarP(&fileName, "file-name-pattern", "f", "access.log.", "file name pattern to look for, follow apache log file naming format, just omit the number ")
 	rootCmd.Flags().IntP("time", "t", 30, "Log file for the last \"t\" minute")
