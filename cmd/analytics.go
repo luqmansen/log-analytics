@@ -31,8 +31,9 @@ func printLine(f *os.File, time time.Duration) {
 			}
 			if checkTime(date, time) {
 				if len(line) > 20 {
-					fmt.Println(line[1] + " " +
-						line[2] +
+					fmt.Println(
+						aurora.Green(line[1]).String() +
+						" " + aurora.BrightBlue(line[2]).String() +
 						" " + aurora.BrightYellow(line[3]+ line[4]).String()  +
 						" " + aurora.Green(line[5]).String() +
 						" " + aurora.BrightBlue(line[6]).String() +
