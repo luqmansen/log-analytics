@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="439a18b0-6f8f-4b73-9dfe-2b1fc9306018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/analytics_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/analytics_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
@@ -147,5 +147,9 @@
       <screen x="0" y="28" width="2732" height="740" />
     </state>
     <state x="1654" y="93" width="790" height="558" key="SettingsEditor/0.28.2732.740@0.28.2732.740" timestamp="1574335839880" />
+    <state x="1855" y="70" width="389" height="632" key="refactoring.ChangeSignatureDialog" timestamp="1574423936111">
+      <screen x="0" y="28" width="2732" height="740" />
+    </state>
+    <state x="1855" y="70" width="389" height="632" key="refactoring.ChangeSignatureDialog/0.28.2732.740@0.28.2732.740" timestamp="1574423936111" />
   </component>
 </project>
