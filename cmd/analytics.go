@@ -17,7 +17,7 @@ const (
 var lineCount, printCount int
 
 func checkEr(e error) {
-	if e != nil{
+	if e != nil {
 		panic(e)
 	}
 }
@@ -31,7 +31,7 @@ func printLine(f *os.File, time time.Duration) {
 		line := strings.Fields(scanner.Text())
 
 		if checkTime(parseDate(parseLine(line)), time) {
-			if len(line)>20{
+			if len(line) > 20 {
 				fmt.Println(line[1] + " " + line[2] + " " + line[3] + line[4] + " " + line[5] + " " + line[6] + " " + line[7] + " " + line[8] + " " + line[9])
 			}
 			printCount++
@@ -51,7 +51,7 @@ func isOpenNewFile() bool {
 
 func parseLine(s []string) string {
 	var val string
-	if len(s) > 3{
+	if len(s) > 3 {
 		val = strings.Replace(s[3], "[", "", -1)
 	}
 	return val
@@ -65,7 +65,7 @@ func parseDate(s string) time.Time {
 
 func checkTime(logTime time.Time, mins time.Duration) bool {
 
-	if logTime.After(time.Now().Add(- mins* time.Minute )){
+	if logTime.After(time.Now().Add(-mins * time.Minute)) {
 		return true
 	}
 	return false
@@ -88,8 +88,8 @@ func analytics(cmd *cobra.Command, args []string) {
 	}
 	number := 1
 	for {
-		f, err := os.Open(dir +"/"+ "access.log."+strconv.Itoa(number))
-		if os.IsNotExist(err){
+		f, err := os.Open(dir + "/" + "access.log." + strconv.Itoa(number))
+		if os.IsNotExist(err) {
 			//fmt.Println(err)
 			break
 		}

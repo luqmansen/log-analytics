@@ -1,24 +1,23 @@
 package cmd
 
 import (
-	"os"
 	"testing"
 )
 
-func TestOpenFile(t *testing.T){
+func TestIsOpenNewFile(t *testing.T) {
+	lineCount = 10
+	printCount = 10
 
+	b := isOpenNewFile()
 
-	f , err := openFile("../", "access.log.1")
-	//provide real file
-	if err != nil{
-		t.Errorf("openFile(\"., access.log.1\") failed, expected %v, got %v", nil, err)
-	} else {
-		t.Log(f)
+	if b == false {
+		t.Errorf("isOpenNewFile() failed, expected %v, got %v", true, b)
+	}
+	printCount++
+
+	b = isOpenNewFile()
+	if b == true {
+		t.Errorf("isOpenNewFile() failed, expected %v, got %v", false, b)
 	}
 
-	//provide fake file
-	_ , err2 := openFile(".", "access.log.x")
-	if !os.IsNotExist(err2){
-		t.Errorf("openFile(\".\", \"access.log.x\") failed, expected %v, got %v", nil, err2)
-	}
 }
