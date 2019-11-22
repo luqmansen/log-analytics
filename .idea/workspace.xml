@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="439a18b0-6f8f-4b73-9dfe-2b1fc9306018" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/log_test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/access.log.2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +95,10 @@
     <proxy>direct</proxy>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1793" y="204" width="513" height="365" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1574427617869">
+      <screen x="0" y="28" width="2732" height="740" />
+    </state>
+    <state x="1793" y="204" width="513" height="365" key="#com.intellij.fileTypes.FileTypeChooser/0.28.2732.740@0.28.2732.740" timestamp="1574427617869" />
     <state width="1326" height="240" key="GridCell.Tab.-1.bottom" timestamp="1574378892981">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
@@ -111,22 +115,22 @@
       <screen x="0" y="28" width="2732" height="740" />
     </state>
     <state width="1326" height="240" key="GridCell.Tab.-1.right/0.28.2732.740@0.28.2732.740" timestamp="1574378892981" />
-    <state width="1326" height="194" key="GridCell.Tab.0.bottom" timestamp="1574419363649">
+    <state width="1326" height="194" key="GridCell.Tab.0.bottom" timestamp="1574428013023">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.bottom/0.28.2732.740@0.28.2732.740" timestamp="1574419363649" />
-    <state width="1326" height="194" key="GridCell.Tab.0.center" timestamp="1574419363647">
+    <state width="1326" height="194" key="GridCell.Tab.0.bottom/0.28.2732.740@0.28.2732.740" timestamp="1574428013023" />
+    <state width="1326" height="194" key="GridCell.Tab.0.center" timestamp="1574428013021">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.center/0.28.2732.740@0.28.2732.740" timestamp="1574419363647" />
-    <state width="1326" height="194" key="GridCell.Tab.0.left" timestamp="1574419363646">
+    <state width="1326" height="194" key="GridCell.Tab.0.center/0.28.2732.740@0.28.2732.740" timestamp="1574428013021" />
+    <state width="1326" height="194" key="GridCell.Tab.0.left" timestamp="1574428013019">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.left/0.28.2732.740@0.28.2732.740" timestamp="1574419363646" />
-    <state width="1326" height="194" key="GridCell.Tab.0.right" timestamp="1574419363648">
+    <state width="1326" height="194" key="GridCell.Tab.0.left/0.28.2732.740@0.28.2732.740" timestamp="1574428013019" />
+    <state width="1326" height="194" key="GridCell.Tab.0.right" timestamp="1574428013022">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.right/0.28.2732.740@0.28.2732.740" timestamp="1574419363648" />
+    <state width="1326" height="194" key="GridCell.Tab.0.right/0.28.2732.740@0.28.2732.740" timestamp="1574428013022" />
     <state width="1326" height="240" key="GridCell.Tab.1.bottom" timestamp="1574378821120">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
