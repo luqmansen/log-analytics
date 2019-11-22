@@ -44,7 +44,6 @@ func printLine(f *os.File, time time.Duration) {
 }
 
 func isOpenNewFile() bool {
-	//fmt.Println(lineCount, printCount)
 	if lineCount == printCount {
 		lineCount, printCount = 0, 0
 		return true
@@ -76,13 +75,6 @@ func analytics(cmd *cobra.Command, args []string) {
 
 	dir, _ := cmd.Flags().GetString("directory")
 	mins, err := cmd.Flags().GetInt("time")
-	//fmt.Println(err)
-	//fmt.Println("directory : " + dir)
-	//fmt.Printf("time : %v \n ",time.Duration(mins)*time.Minute)
-
-	//log := time.Now().Add(time.Duration(-mins) * time.Minute)
-
-	//fmt.Printf("log %v",  log)
 
 	if err != nil {
 		fmt.Println(err)
