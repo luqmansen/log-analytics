@@ -22,12 +22,6 @@ func checkEr(e error) {
 	}
 }
 
-func openFile(dir string, filename string) (*os.File, error) {
-	file, err := os.Open(dir + "/" + filename)
-	//fmt.Println(dir + "/" + filename)
-	return file, err
-}
-
 func printLine(f *os.File, time time.Duration) {
 
 	scanner := bufio.NewScanner(f)
@@ -46,7 +40,7 @@ func printLine(f *os.File, time time.Duration) {
 	}
 }
 
-func openNewFile() bool {
+func isOpenNewFile() bool {
 	//fmt.Println(lineCount, printCount)
 	if lineCount == printCount {
 		lineCount, printCount = 0, 0
@@ -71,18 +65,9 @@ func parseDate(s string) time.Time {
 
 func checkTime(logTime time.Time, mins time.Duration) bool {
 
-	//res := logTime.Sub(time.Now())
-	//fmt.Println(res)
-	//fmt.Println(mins*time.Minute)
-	//fmt.Println(res > 1*time.Nanosecond)
-	//fmt.Println(res <= mins*time.Minute)
 	if logTime.After(time.Now().Add(- mins* time.Minute )){
-	//if res <= mins*time.Minute && res > 1*time.Nanosecond {
-		//fmt.Println(res)
-		//fmt.Println(mins* time.Minute)
 		return true
 	}
-
 	return false
 }
 
@@ -103,13 +88,14 @@ func analytics(cmd *cobra.Command, args []string) {
 	}
 	number := 1
 	for {
-		f, err := openFile(dir, "access.log."+strconv.Itoa(number))
+		f, err := os.Open(dir +"/"+ "access.log."+strconv.Itoa(number))
 		if os.IsNotExist(err){
+			//fmt.Println(err)
 			break
 		}
 		printLine(f, time.Duration(mins))
 		number++
-		if !openNewFile() {
+		if !isOpenNewFile() {
 			break
 		}
 	}
