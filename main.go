@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "analytics/cmd"
+import "github.com/luqmansen/log-analytics/cmd"
 
 func main() {
 	cmd.Execute()
