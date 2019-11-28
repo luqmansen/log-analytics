@@ -7,4 +7,5 @@ notifications:
   email: false
 
 script:
-  - go test -v ./cmd
+  - go test -v ./cmd -covermode=count -coverprofile=coverage.out
+    $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
