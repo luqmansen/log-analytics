@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="439a18b0-6f8f-4b73-9dfe-2b1fc9306018" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/log-analytics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cover.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cover.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/analytics.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/analytics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +56,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build analytics" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="log-analytics" />
@@ -77,11 +94,17 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView />
-      </list>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,22 +141,22 @@
       <screen x="0" y="28" width="2732" height="740" />
     </state>
     <state width="1326" height="240" key="GridCell.Tab.-1.right/0.28.2732.740@0.28.2732.740" timestamp="1574378892981" />
-    <state width="1326" height="194" key="GridCell.Tab.0.bottom" timestamp="1574428013023">
+    <state width="1326" height="240" key="GridCell.Tab.0.bottom" timestamp="1574435929449">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.bottom/0.28.2732.740@0.28.2732.740" timestamp="1574428013023" />
-    <state width="1326" height="194" key="GridCell.Tab.0.center" timestamp="1574428013021">
+    <state width="1326" height="240" key="GridCell.Tab.0.bottom/0.28.2732.740@0.28.2732.740" timestamp="1574435929449" />
+    <state width="1326" height="240" key="GridCell.Tab.0.center" timestamp="1574435929446">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.center/0.28.2732.740@0.28.2732.740" timestamp="1574428013021" />
-    <state width="1326" height="194" key="GridCell.Tab.0.left" timestamp="1574428013019">
+    <state width="1326" height="240" key="GridCell.Tab.0.center/0.28.2732.740@0.28.2732.740" timestamp="1574435929446" />
+    <state width="1326" height="240" key="GridCell.Tab.0.left" timestamp="1574435929445">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.left/0.28.2732.740@0.28.2732.740" timestamp="1574428013019" />
-    <state width="1326" height="194" key="GridCell.Tab.0.right" timestamp="1574428013022">
+    <state width="1326" height="240" key="GridCell.Tab.0.left/0.28.2732.740@0.28.2732.740" timestamp="1574435929445" />
+    <state width="1326" height="240" key="GridCell.Tab.0.right" timestamp="1574435929447">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
-    <state width="1326" height="194" key="GridCell.Tab.0.right/0.28.2732.740@0.28.2732.740" timestamp="1574428013022" />
+    <state width="1326" height="240" key="GridCell.Tab.0.right/0.28.2732.740@0.28.2732.740" timestamp="1574435929447" />
     <state width="1326" height="240" key="GridCell.Tab.1.bottom" timestamp="1574378821120">
       <screen x="0" y="28" width="2732" height="740" />
     </state>
