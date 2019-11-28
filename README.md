@@ -10,13 +10,13 @@ Example provided is the default log file for access log on apache server
 ```
 
 ## Flags:
-| flag | alias | note |
-|---|---|---|
-  |-d |  --directory string |Directory where the log file lies (default ".")|
-  |-f| --file-name-pattern string|   file name pattern to look for, follow apache log file naming format, just omit the number  (default "access.log.")|
-  |-h| --help                     |  help for analytics|
-  |-t| --time int                  | Log file for the last "t" minute (default 30)|
-   |   |--config string              |config file (default is $HOME/.analytics.yaml)|
+| flag | alias | type | note |
+|---|---|---|---|
+  |-d |  --directory |string |Directory where the log file lies (default ".")|
+  |-f| --file-name-pattern |string|   file name pattern to look for, follow apache log file naming format, just omit the number  (default "access.log.")|
+  |-t| --time |int                  | Log file for the last "t" minute (default 30)|
+  |-h| --help |                     |  help for analytics|
+   |   |--config | string              |config file (default is $HOME/.analytics.yaml)|
 
 ## Demo
  ![ss](docs/ss1.png)
