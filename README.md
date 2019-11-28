@@ -1,5 +1,6 @@
 # log-analytics
 [![Build Status](https://travis-ci.com/luqmansen/log-analytics.svg?branch=master)](https://travis-ci.com/luqmansen/log-analytics)
+[![Coverage Status](https://coveralls.io/repos/github/luqmansen/log-analytics/badge.svg?branch=master)](https://coveralls.io/github/luqmansen/log-analytics?branch=master)
 
 Cli-tool for display log file analytics, specifically to read log file that
 follow Common Log Format (https://en.wikipedia.org/wiki/Common_Log_Format).
